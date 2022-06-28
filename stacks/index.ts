@@ -1,4 +1,5 @@
 const { StorageStack } = require('./StorageStack')
+const { ApiStack } = require('./ApiStack')
 
 export default function main(app: any) {
   app.setDefaultFunctionProps({
@@ -8,5 +9,5 @@ export default function main(app: any) {
       format: "esm",
     },
   });
-  app.stack(StorageStack);
+  app.stack(StorageStack).stack(ApiStack);
 }
